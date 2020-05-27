@@ -16,7 +16,7 @@ services:
     volumes:
       - node_data:/var/run/tezos/node
       - client_data:/var/run/tezos/client
-    restart: on-failure
+    restart: always
   exporter:
     image: node:alpine
     container_name: exporter-node
@@ -27,3 +27,4 @@ services:
       - '127.0.0.1:8000:8000'
     volumes:
       - .:/src
+    restart: always
